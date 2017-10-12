@@ -18,9 +18,10 @@ module Lita
         #   attachment should be sent.
         # @param attachments [Attachment, Array<Attachment>] An {Attachment} or array of
         #   {Attachment}s to send.
+        # @params options [Hash] Extra message arguments that will be passed to Slack's message API
         # @return [void]
-        def send_attachments(target, attachments)
-          api.send_attachments(target, Array(attachments))
+        def send_attachments(target, attachments, options = {})
+          api.send_attachments(target, Array(attachments), options)
         end
         alias_method :send_attachment, :send_attachments
       end
