@@ -24,6 +24,11 @@ module Lita
           api.send_attachments(target, Array(attachments), options)
         end
         alias_method :send_attachment, :send_attachments
+
+
+        def open_dialog(dialog, trigger_id)
+          api.open_dialog(dialog, trigger_id)
+        end
       end
     end
   end
