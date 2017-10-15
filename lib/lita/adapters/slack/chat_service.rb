@@ -38,6 +38,15 @@ module Lita
         def delete(channel, ts)
           api.delete(channel, ts)
         end
+
+        # @param channel The channel containing the message to be deleted
+        # @param ts The timestamp of the message
+        # @param attachments [Attachment, Array<Attachment>] An {Attachment} or array of
+        #   {Attachment}s to send.
+        # @return [void]
+        def update_attachments(channel, ts, attachments)
+          api.update_attachments(channel, ts, Array(attachments))
+        end
       end
     end
   end

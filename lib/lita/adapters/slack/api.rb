@@ -78,6 +78,10 @@ module Lita
           call_api("chat.delete", channel: channel, ts: ts)
         end
 
+        def update_attachments(channel, ts, attachments)
+          call_api("chat.update", channel: channel, ts: ts, attachments: MultiJson.dump(attachments.map(&:to_hash)))
+        end
+
         def set_topic(channel, topic)
           call_api("channels.setTopic", channel: channel, topic: topic)
         end
